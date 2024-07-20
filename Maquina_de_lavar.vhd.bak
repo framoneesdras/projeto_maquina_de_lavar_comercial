@@ -1,6 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity WashingMachine is
     Port (
@@ -23,7 +24,6 @@ architecture Behavioral of WashingMachine is
     signal motor_ctrl : STD_LOGIC;
     signal water_valve_ctrl : STD_LOGIC;
     signal led_status : STD_LOGIC_VECTOR(2 downto 0);
-    signal start_timer_signal : STD_LOGIC;
 
     component MoneyCounter
         Port (
@@ -73,59 +73,7 @@ architecture Behavioral of WashingMachine is
         );
     end component;
 
-begin
-
-    U1: MoneyCounter
-        Port map (
-            clk => clk,
-            reset => reset,
-            coin_in => coin_in,
-            total_money => total_money
-        );
-
-    U2: StateRegister
-        Port map (
-            clk => clk,
-            reset => reset,
-            next_state => next_state,
-            current_state => current_state
-        );
-
-    U3: Timer
-        Port map (
-            clk => clk,
-            reset => reset,
-            start_timer => start_timer_signal,
-            timer_done => timer_done
-        );
-
-    U4: MotorControl
-        Port map (
-            motor_ctrl => motor_ctrl,
-            motor_signal => motor_signal
-        );
-
-    U5: WaterValveControl
-        Port map (
-            water_valve_ctrl => water_valve_ctrl,
-            water_valve_signal => water_valve_signal
-        );
-
-    U6: DisplayAndLEDs
-        Port map (
-            led_status => led_status,
-            led_output => led_output
-        );
-
-    process(clk, reset)
-    begin
-        if reset = '1' then
-            current_state <= "000";
-        elsif rising_edge(clk) then
-            current_state <= next_state;
-        end if;
-    end process;
-
+    -- FSM logic
     process(current_state, start, total_money, timer_done)
     begin
         case current_state is
@@ -183,7 +131,48 @@ begin
                   "110" when current_state = "101" else
                   "000";
 
-    -- Start timer signal
-    start_timer_signal <= '1' when (current_state = "001" or current_state = "010" or current_state = "011" or current_state = "100") else '0';
+begin
+
+    U1: MoneyCounter
+        Port map (
+            clk => clk,
+            reset => reset,
+            coin_in => coin_in,
+            total_money => total_money
+        );
+
+    U2: StateRegister
+        Port map (
+            clk => clk,
+            reset => reset,
+            next_state => next_state,
+            current_state => current_state
+        );
+
+    U3: Timer
+        Port map (
+            clk => clk,
+            reset => reset,
+            start_timer => (current_state = "001" or current_state = "010" or current_state = "011" or current_state = "100"),
+            timer_done => timer_done
+        );
+
+    U4: MotorControl
+        Port map (
+            motor_ctrl => motor_ctrl,
+            motor_signal => motor_signal
+        );
+
+    U5: WaterValveControl
+        Port map (
+            water_valve_ctrl => water_valve_ctrl,
+            water_valve_signal => water_valve_signal
+        );
+
+    U6: DisplayAndLEDs
+        Port map (
+            led_status => led_status,
+            led_output => led_output
+        );
 
 end Behavioral;
