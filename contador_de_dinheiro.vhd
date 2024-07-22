@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 entity ContadorDinheiro is
     Port (
@@ -21,7 +20,7 @@ begin
             contador_dinheiro <= (others => '0');
         elsif rising_edge(clk) then
             if moeda_entrada /= "0000" then
-                contador_dinheiro <= contador_dinheiro + moeda_entrada;
+                contador_dinheiro <= std_logic_vector(unsigned(contador_dinheiro) + unsigned(moeda_entrada));
             end if;
         end if;
     end process;
