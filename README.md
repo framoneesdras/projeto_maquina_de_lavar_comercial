@@ -1,1 +1,0 @@
-# projeto_maquina_de_lavar_comercial
