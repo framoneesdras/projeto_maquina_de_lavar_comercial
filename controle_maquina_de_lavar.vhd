@@ -25,6 +25,8 @@ architecture Comportamental of ControleMaquinaDeLavar is
     signal status_led : STD_LOGIC_VECTOR(2 downto 0);
     signal sinal_iniciar_temporizador : STD_LOGIC;
 
+    constant VALOR_PARA_INICIAR : STD_LOGIC_VECTOR(3 downto 0) := "1010";
+
     component ContadorDinheiro
         Port (
             clk : in STD_LOGIC;
@@ -130,7 +132,7 @@ begin
     begin
         case estado_atual is
             when "000" =>  -- ESPERA
-                if iniciar = '1' and dinheiro_total = "1010" then
+                if iniciar = '1' and dinheiro_total = VALOR_PARA_INICIAR then
                     proximo_estado <= "001";  -- ENCHIMENTO
                 else
                     proximo_estado <= "000";
