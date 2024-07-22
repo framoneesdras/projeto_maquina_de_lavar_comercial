@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity MaquinaDeLavar is
+entity ControleMaquinaDeLavar is
     Port (
         clk : in STD_LOGIC;
         reset : in STD_LOGIC;
@@ -12,9 +12,9 @@ entity MaquinaDeLavar is
         sinal_motor : out STD_LOGIC;
         sinal_valvula_agua : out STD_LOGIC
     );
-end MaquinaDeLavar;
+end ControleMaquinaDeLavar;
 
-architecture Comportamental of MaquinaDeLavar is
+architecture Comportamental of ControleMaquinaDeLavar is
 
     signal dinheiro_total : STD_LOGIC_VECTOR(3 downto 0);
     signal estado_atual : STD_LOGIC_VECTOR(2 downto 0);
