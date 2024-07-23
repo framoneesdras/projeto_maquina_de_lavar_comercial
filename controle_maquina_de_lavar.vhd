@@ -15,7 +15,6 @@ entity ControleMaquinaDeLavar is
 end ControleMaquinaDeLavar;
 
 architecture Comportamental of ControleMaquinaDeLavar is
-
     signal dinheiro_total : STD_LOGIC_VECTOR(3 downto 0);
     signal estado_atual : STD_LOGIC_VECTOR(2 downto 0);
     signal proximo_estado : STD_LOGIC_VECTOR(2 downto 0);
@@ -24,9 +23,7 @@ architecture Comportamental of ControleMaquinaDeLavar is
     signal ctrl_valvula_agua : STD_LOGIC;
     signal status_led : STD_LOGIC_VECTOR(2 downto 0);
     signal sinal_iniciar_temporizador : STD_LOGIC;
-
     constant VALOR_PARA_INICIAR : STD_LOGIC_VECTOR(3 downto 0) := "1010";
-
     component ContadorDinheiro
         Port (
             clk : in STD_LOGIC;
@@ -35,7 +32,6 @@ architecture Comportamental of ControleMaquinaDeLavar is
             dinheiro_total : out STD_LOGIC_VECTOR(3 downto 0)
         );
     end component;
-
     component RegistradorEstado
         Port (
             clk : in STD_LOGIC;
@@ -44,7 +40,6 @@ architecture Comportamental of ControleMaquinaDeLavar is
             estado_atual : out STD_LOGIC_VECTOR(2 downto 0)
         );
     end component;
-
     component Temporizador
         Port (
             clk : in STD_LOGIC;
@@ -53,21 +48,18 @@ architecture Comportamental of ControleMaquinaDeLavar is
             temporizador_concluido : out STD_LOGIC
         );
     end component;
-
     component ControleMotor
         Port (
             ctrl_motor : in STD_LOGIC;
             sinal_motor : out STD_LOGIC
         );
     end component;
-
     component ControleValvulaAgua
         Port (
             ctrl_valvula_agua : in STD_LOGIC;
             sinal_valvula_agua : out STD_LOGIC
         );
     end component;
-
     component LEDsDisplay
         Port (
             status_led : in STD_LOGIC_VECTOR(2 downto 0);
@@ -76,7 +68,6 @@ architecture Comportamental of ControleMaquinaDeLavar is
     end component;
 
 begin
-
     U1: ContadorDinheiro
         Port map (
             clk => clk,
@@ -84,7 +75,6 @@ begin
             moeda_entrada => moeda_entrada,
             dinheiro_total => dinheiro_total
         );
-
     U2: RegistradorEstado
         Port map (
             clk => clk,
@@ -92,7 +82,6 @@ begin
             proximo_estado => proximo_estado,
             estado_atual => estado_atual
         );
-
     U3: Temporizador
         Port map (
             clk => clk,
@@ -100,19 +89,16 @@ begin
             iniciar_temporizador => sinal_iniciar_temporizador,
             temporizador_concluido => temporizador_concluido
         );
-
     U4: ControleMotor
         Port map (
             ctrl_motor => ctrl_motor,
             sinal_motor => sinal_motor
         );
-
     U5: ControleValvulaAgua
         Port map (
             ctrl_valvula_agua => ctrl_valvula_agua,
             sinal_valvula_agua => sinal_valvula_agua
         );
-
     U6: LEDsDisplay
         Port map (
             status_led => status_led,
@@ -172,20 +158,15 @@ begin
         end case;
     end process;
 
-    -- Sinais de controle para o motor e válvula de água
-    ctrl_motor <= '1' when (estado_atual = "010" or estado_atual = "100") else '0';
+    ctrl_motor <= '1' when (estado_atual = "010" or estado_atual = "100") else '0'; -  -- Sinais de controle para o motor e válvula de água
     ctrl_valvula_agua <= '1' when (estado_atual = "001" or estado_atual = "011") else '0';
-
-    -- Status dos LEDs
-    status_led <= "001" when estado_atual = "000" else
+    status_led <= "001" when estado_atual = "000" else -- Status dos LEDs
                   "010" when estado_atual = "001" else
                   "011" when estado_atual = "010" else
                   "100" when estado_atual = "011" else
                   "101" when estado_atual = "100" else
                   "110" when estado_atual = "101" else
                   "000";
-
-    -- Sinal de iniciar temporizador
-    sinal_iniciar_temporizador <= '1' when (estado_atual = "001" or estado_atual = "010" or estado_atual = "011" or estado_atual = "100") else '0';
+    sinal_iniciar_temporizador <= '1' when (estado_atual = "001" or estado_atual = "010" or estado_atual = "011" or estado_atual = "100") else '0'; -- Sinal de iniciar temporizador
 
 end Comportamental;
