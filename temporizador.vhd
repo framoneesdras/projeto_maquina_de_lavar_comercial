@@ -14,7 +14,7 @@ end Temporizador;
 
 architecture Comportamental of Temporizador is
     signal contador : INTEGER := 0;
-    constant LIMITE_CONTADOR : INTEGER := 1000000; -- Ajuste conforme necessário
+    constant LIMITE_CONTADOR : INTEGER := 1000000; -- Ajuste tempo
 begin
     process(clk, reset)
     begin
