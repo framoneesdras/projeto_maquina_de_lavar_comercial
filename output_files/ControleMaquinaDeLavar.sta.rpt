@@ -1,0 +1,1125 @@
+TimeQuest Timing Analyzer report for ControleMaquinaDeLavar
+Fri Jul 26 14:13:35 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; ControleMaquinaDeLavar                                            ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C15AF256C7                                                     ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 194.63 MHz ; 194.63 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -4.138 ; -124.306      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.445 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.631 ; -50.511               ;
++-------+--------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                    ;
++--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                    ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; -4.138 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.175      ;
+; -4.065 ; Temporizador:U2|contador[1]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.102      ;
+; -3.986 ; Temporizador:U2|contador[2]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 5.023      ;
+; -3.947 ; Temporizador:U2|contador[3]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.984      ;
+; -3.863 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[21] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.900      ;
+; -3.827 ; Temporizador:U2|contador[4]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.864      ;
+; -3.790 ; Temporizador:U2|contador[1]  ; Temporizador:U2|contador[21] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.827      ;
+; -3.787 ; Temporizador:U2|contador[5]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.824      ;
+; -3.765 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.803      ;
+; -3.765 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.803      ;
+; -3.765 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.803      ;
+; -3.765 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.803      ;
+; -3.765 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.803      ;
+; -3.765 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.803      ;
+; -3.765 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.803      ;
+; -3.765 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.803      ;
+; -3.727 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[19] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.764      ;
+; -3.720 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.754      ;
+; -3.720 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.754      ;
+; -3.720 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.754      ;
+; -3.720 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.754      ;
+; -3.720 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.754      ;
+; -3.720 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.754      ;
+; -3.720 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.754      ;
+; -3.720 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.754      ;
+; -3.715 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.752      ;
+; -3.711 ; Temporizador:U2|contador[2]  ; Temporizador:U2|contador[21] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.748      ;
+; -3.683 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[22] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.720      ;
+; -3.680 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.680 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.714      ;
+; -3.672 ; Temporizador:U2|contador[3]  ; Temporizador:U2|contador[21] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.709      ;
+; -3.661 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.699      ;
+; -3.661 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.699      ;
+; -3.661 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.699      ;
+; -3.661 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.699      ;
+; -3.661 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.699      ;
+; -3.661 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.699      ;
+; -3.661 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.699      ;
+; -3.661 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.699      ;
+; -3.654 ; Temporizador:U2|contador[1]  ; Temporizador:U2|contador[19] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.691      ;
+; -3.641 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.679      ;
+; -3.641 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.679      ;
+; -3.641 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.679      ;
+; -3.641 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.679      ;
+; -3.641 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.679      ;
+; -3.641 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.679      ;
+; -3.641 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.679      ;
+; -3.641 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.679      ;
+; -3.634 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.672      ;
+; -3.634 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.672      ;
+; -3.634 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.672      ;
+; -3.634 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.672      ;
+; -3.634 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.672      ;
+; -3.634 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.672      ;
+; -3.634 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.672      ;
+; -3.634 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.672      ;
+; -3.621 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[18] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.658      ;
+; -3.610 ; Temporizador:U2|contador[1]  ; Temporizador:U2|contador[22] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.647      ;
+; -3.604 ; Temporizador:U2|contador[10] ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.638      ;
+; -3.604 ; Temporizador:U2|contador[10] ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.638      ;
+; -3.604 ; Temporizador:U2|contador[10] ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.638      ;
+; -3.604 ; Temporizador:U2|contador[10] ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.638      ;
+; -3.604 ; Temporizador:U2|contador[10] ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.638      ;
+; -3.604 ; Temporizador:U2|contador[10] ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.638      ;
+; -3.604 ; Temporizador:U2|contador[10] ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.638      ;
+; -3.604 ; Temporizador:U2|contador[10] ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; -0.004     ; 4.638      ;
+; -3.602 ; Temporizador:U2|contador[7]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.639      ;
+; -3.575 ; Temporizador:U2|contador[2]  ; Temporizador:U2|contador[19] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.612      ;
+; -3.552 ; Temporizador:U2|contador[4]  ; Temporizador:U2|contador[21] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.589      ;
+; -3.548 ; Temporizador:U2|contador[1]  ; Temporizador:U2|contador[18] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.585      ;
+; -3.542 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[17] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.579      ;
+; -3.536 ; Temporizador:U2|contador[3]  ; Temporizador:U2|contador[19] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.573      ;
+; -3.531 ; Temporizador:U2|contador[2]  ; Temporizador:U2|contador[22] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.568      ;
+; -3.523 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[20] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.560      ;
+; -3.512 ; Temporizador:U2|contador[5]  ; Temporizador:U2|contador[21] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.549      ;
+; -3.509 ; Temporizador:U2|contador[16] ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.547      ;
+; -3.492 ; Temporizador:U2|contador[3]  ; Temporizador:U2|contador[22] ; clk          ; clk         ; 1.000        ; -0.001     ; 4.529      ;
+; -3.489 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.524      ;
+; -3.489 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.524      ;
+; -3.489 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.524      ;
+; -3.489 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.524      ;
+; -3.489 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.524      ;
+; -3.489 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.524      ;
+; -3.489 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.524      ;
+; -3.489 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.524      ;
+; -3.479 ; estado_atual[2]              ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; -0.006     ; 4.511      ;
++--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                            ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; estado_atual[1]                          ; estado_atual[1]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.629 ; Temporizador:U2|contador[31]             ; Temporizador:U2|contador[31]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.915      ;
+; 0.960 ; Temporizador:U2|contador[0]              ; Temporizador:U2|contador[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.246      ;
+; 0.967 ; Temporizador:U2|contador[1]              ; Temporizador:U2|contador[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.253      ;
+; 0.968 ; ContadorDinheiro:U1|contador_dinheiro[2] ; ContadorDinheiro:U1|contador_dinheiro[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 0.968 ; Temporizador:U2|contador[2]              ; Temporizador:U2|contador[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 0.969 ; Temporizador:U2|contador[4]              ; Temporizador:U2|contador[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.255      ;
+; 0.972 ; Temporizador:U2|contador[25]             ; Temporizador:U2|contador[25]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.258      ;
+; 0.972 ; Temporizador:U2|contador[27]             ; Temporizador:U2|contador[27]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.258      ;
+; 0.976 ; Temporizador:U2|contador[9]              ; Temporizador:U2|contador[9]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.262      ;
+; 0.977 ; Temporizador:U2|contador[7]              ; Temporizador:U2|contador[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.263      ;
+; 0.977 ; Temporizador:U2|contador[11]             ; Temporizador:U2|contador[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.263      ;
+; 0.977 ; Temporizador:U2|contador[13]             ; Temporizador:U2|contador[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.263      ;
+; 0.977 ; Temporizador:U2|contador[14]             ; Temporizador:U2|contador[14]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.263      ;
+; 0.977 ; Temporizador:U2|contador[15]             ; Temporizador:U2|contador[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.263      ;
+; 0.977 ; Temporizador:U2|contador[29]             ; Temporizador:U2|contador[29]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.263      ;
+; 0.977 ; Temporizador:U2|contador[30]             ; Temporizador:U2|contador[30]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.263      ;
+; 1.008 ; Temporizador:U2|contador[3]              ; Temporizador:U2|contador[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.294      ;
+; 1.008 ; Temporizador:U2|contador[5]              ; Temporizador:U2|contador[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.294      ;
+; 1.010 ; ContadorDinheiro:U1|contador_dinheiro[3] ; ContadorDinheiro:U1|contador_dinheiro[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.296      ;
+; 1.015 ; Temporizador:U2|contador[8]              ; Temporizador:U2|contador[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.301      ;
+; 1.015 ; Temporizador:U2|contador[24]             ; Temporizador:U2|contador[24]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.301      ;
+; 1.016 ; Temporizador:U2|contador[6]              ; Temporizador:U2|contador[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.302      ;
+; 1.016 ; Temporizador:U2|contador[10]             ; Temporizador:U2|contador[10]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.302      ;
+; 1.016 ; Temporizador:U2|contador[12]             ; Temporizador:U2|contador[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.302      ;
+; 1.016 ; Temporizador:U2|contador[26]             ; Temporizador:U2|contador[26]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.302      ;
+; 1.016 ; Temporizador:U2|contador[28]             ; Temporizador:U2|contador[28]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.302      ;
+; 1.019 ; ContadorDinheiro:U1|contador_dinheiro[1] ; ContadorDinheiro:U1|contador_dinheiro[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.305      ;
+; 1.021 ; ContadorDinheiro:U1|contador_dinheiro[0] ; ContadorDinheiro:U1|contador_dinheiro[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.307      ;
+; 1.246 ; estado_atual[0]                          ; estado_atual[1]                          ; clk          ; clk         ; 0.000        ; -0.003     ; 1.529      ;
+; 1.392 ; Temporizador:U2|contador[0]              ; Temporizador:U2|contador[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.678      ;
+; 1.393 ; estado_atual[1]                          ; estado_atual[2]                          ; clk          ; clk         ; 0.000        ; 0.003      ; 1.682      ;
+; 1.399 ; Temporizador:U2|contador[1]              ; Temporizador:U2|contador[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.685      ;
+; 1.400 ; Temporizador:U2|contador[2]              ; Temporizador:U2|contador[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.686      ;
+; 1.401 ; Temporizador:U2|contador[4]              ; Temporizador:U2|contador[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.687      ;
+; 1.404 ; Temporizador:U2|contador[25]             ; Temporizador:U2|contador[26]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.690      ;
+; 1.404 ; Temporizador:U2|contador[27]             ; Temporizador:U2|contador[28]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.690      ;
+; 1.408 ; Temporizador:U2|contador[9]              ; Temporizador:U2|contador[10]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.694      ;
+; 1.409 ; Temporizador:U2|contador[30]             ; Temporizador:U2|contador[31]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.695      ;
+; 1.409 ; Temporizador:U2|contador[13]             ; Temporizador:U2|contador[14]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.695      ;
+; 1.409 ; Temporizador:U2|contador[14]             ; Temporizador:U2|contador[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.695      ;
+; 1.409 ; Temporizador:U2|contador[29]             ; Temporizador:U2|contador[30]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.695      ;
+; 1.409 ; Temporizador:U2|contador[11]             ; Temporizador:U2|contador[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.695      ;
+; 1.441 ; Temporizador:U2|contador[3]              ; Temporizador:U2|contador[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.727      ;
+; 1.441 ; Temporizador:U2|contador[5]              ; Temporizador:U2|contador[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.727      ;
+; 1.445 ; ContadorDinheiro:U1|contador_dinheiro[0] ; estado_atual[0]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.731      ;
+; 1.448 ; Temporizador:U2|contador[24]             ; Temporizador:U2|contador[25]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.734      ;
+; 1.448 ; Temporizador:U2|contador[8]              ; Temporizador:U2|contador[9]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.734      ;
+; 1.449 ; Temporizador:U2|contador[26]             ; Temporizador:U2|contador[27]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.735      ;
+; 1.449 ; Temporizador:U2|contador[6]              ; Temporizador:U2|contador[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.735      ;
+; 1.449 ; Temporizador:U2|contador[10]             ; Temporizador:U2|contador[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.735      ;
+; 1.449 ; Temporizador:U2|contador[12]             ; Temporizador:U2|contador[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.735      ;
+; 1.449 ; Temporizador:U2|contador[28]             ; Temporizador:U2|contador[29]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.735      ;
+; 1.452 ; ContadorDinheiro:U1|contador_dinheiro[1] ; ContadorDinheiro:U1|contador_dinheiro[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.738      ;
+; 1.452 ; ContadorDinheiro:U1|contador_dinheiro[0] ; ContadorDinheiro:U1|contador_dinheiro[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.738      ;
+; 1.472 ; Temporizador:U2|contador[0]              ; Temporizador:U2|contador[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.758      ;
+; 1.479 ; Temporizador:U2|contador[1]              ; Temporizador:U2|contador[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.765      ;
+; 1.480 ; Temporizador:U2|contador[2]              ; Temporizador:U2|contador[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.766      ;
+; 1.481 ; Temporizador:U2|contador[4]              ; Temporizador:U2|contador[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.767      ;
+; 1.484 ; Temporizador:U2|contador[25]             ; Temporizador:U2|contador[27]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.770      ;
+; 1.484 ; Temporizador:U2|contador[27]             ; Temporizador:U2|contador[29]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.770      ;
+; 1.488 ; Temporizador:U2|contador[9]              ; Temporizador:U2|contador[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.774      ;
+; 1.489 ; Temporizador:U2|contador[29]             ; Temporizador:U2|contador[31]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.775      ;
+; 1.489 ; Temporizador:U2|contador[13]             ; Temporizador:U2|contador[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.775      ;
+; 1.489 ; Temporizador:U2|contador[11]             ; Temporizador:U2|contador[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.775      ;
+; 1.490 ; Temporizador:U2|temporizador_concluido   ; estado_atual[2]                          ; clk          ; clk         ; 0.000        ; 0.003      ; 1.779      ;
+; 1.499 ; estado_atual[0]                          ; estado_atual[2]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.785      ;
+; 1.501 ; ContadorDinheiro:U1|contador_dinheiro[2] ; ContadorDinheiro:U1|contador_dinheiro[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.787      ;
+; 1.510 ; Temporizador:U2|contador[7]              ; Temporizador:U2|contador[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.796      ;
+; 1.512 ; estado_atual[0]                          ; estado_atual[0]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.798      ;
+; 1.521 ; Temporizador:U2|contador[3]              ; Temporizador:U2|contador[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.807      ;
+; 1.521 ; Temporizador:U2|contador[5]              ; Temporizador:U2|contador[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.807      ;
+; 1.528 ; Temporizador:U2|contador[24]             ; Temporizador:U2|contador[26]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.814      ;
+; 1.528 ; Temporizador:U2|contador[8]              ; Temporizador:U2|contador[10]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.814      ;
+; 1.529 ; Temporizador:U2|contador[26]             ; Temporizador:U2|contador[28]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.815      ;
+; 1.529 ; Temporizador:U2|contador[12]             ; Temporizador:U2|contador[14]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.815      ;
+; 1.529 ; Temporizador:U2|contador[28]             ; Temporizador:U2|contador[30]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.815      ;
+; 1.529 ; Temporizador:U2|contador[10]             ; Temporizador:U2|contador[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.815      ;
+; 1.532 ; ContadorDinheiro:U1|contador_dinheiro[0] ; ContadorDinheiro:U1|contador_dinheiro[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.818      ;
+; 1.552 ; Temporizador:U2|contador[0]              ; Temporizador:U2|contador[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.838      ;
+; 1.559 ; Temporizador:U2|contador[1]              ; Temporizador:U2|contador[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.845      ;
+; 1.560 ; Temporizador:U2|contador[2]              ; Temporizador:U2|contador[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.846      ;
+; 1.561 ; Temporizador:U2|contador[4]              ; Temporizador:U2|contador[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.847      ;
+; 1.564 ; Temporizador:U2|contador[25]             ; Temporizador:U2|contador[28]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.850      ;
+; 1.564 ; Temporizador:U2|contador[27]             ; Temporizador:U2|contador[30]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.850      ;
+; 1.568 ; Temporizador:U2|contador[9]              ; Temporizador:U2|contador[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.854      ;
+; 1.569 ; Temporizador:U2|contador[11]             ; Temporizador:U2|contador[14]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.855      ;
+; 1.590 ; Temporizador:U2|contador[7]              ; Temporizador:U2|contador[9]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.876      ;
+; 1.592 ; ContadorDinheiro:U1|contador_dinheiro[3] ; estado_atual[0]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.878      ;
+; 1.601 ; Temporizador:U2|contador[3]              ; Temporizador:U2|contador[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.887      ;
+; 1.608 ; Temporizador:U2|contador[24]             ; Temporizador:U2|contador[27]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.894      ;
+; 1.608 ; Temporizador:U2|contador[8]              ; Temporizador:U2|contador[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.894      ;
+; 1.609 ; Temporizador:U2|contador[26]             ; Temporizador:U2|contador[29]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.895      ;
+; 1.609 ; Temporizador:U2|contador[28]             ; Temporizador:U2|contador[31]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.895      ;
+; 1.609 ; Temporizador:U2|contador[12]             ; Temporizador:U2|contador[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.895      ;
+; 1.609 ; Temporizador:U2|contador[10]             ; Temporizador:U2|contador[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.895      ;
+; 1.623 ; Temporizador:U2|contador[6]              ; Temporizador:U2|contador[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.909      ;
+; 1.626 ; ContadorDinheiro:U1|contador_dinheiro[1] ; ContadorDinheiro:U1|contador_dinheiro[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.912      ;
+; 1.632 ; Temporizador:U2|contador[0]              ; Temporizador:U2|contador[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.918      ;
+; 1.639 ; Temporizador:U2|contador[1]              ; Temporizador:U2|contador[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.925      ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                   ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                                      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[0] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[0] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[1] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[1] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[2] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[2] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[3] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[3] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[10]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[10]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[11]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[11]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[12]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[12]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[13]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[13]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[14]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[14]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[15]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[15]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[16]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[16]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[17]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[17]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[18]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[18]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[19]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[19]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[1]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[1]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[20]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[20]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[21]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[21]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[22]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[22]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[23]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[23]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[24]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[24]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[25]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[25]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[26]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[26]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[27]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[27]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[28]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[28]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[29]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[29]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[2]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[2]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[30]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[30]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[31]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[31]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[3]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[3]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[4]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[4]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[5]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[5]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[6]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[6]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[7]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[7]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[8]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[8]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[9]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[9]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|temporizador_concluido   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|temporizador_concluido   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; estado_atual[0]                          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; estado_atual[0]                          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; estado_atual[1]                          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; estado_atual[1]                          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; estado_atual[2]                          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; estado_atual[2]                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U1|contador_dinheiro[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U1|contador_dinheiro[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U1|contador_dinheiro[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U1|contador_dinheiro[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U1|contador_dinheiro[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U1|contador_dinheiro[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U1|contador_dinheiro[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U1|contador_dinheiro[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U2|contador[0]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U2|contador[0]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U2|contador[10]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U2|contador[10]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U2|contador[11]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U2|contador[11]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U2|contador[12]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U2|contador[12]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U2|contador[13]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U2|contador[13]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U2|contador[14]|clk                      ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Setup Times                                                                   ;
++-------------------+------------+-------+-------+------------+-----------------+
+; Data Port         ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------------+------------+-------+-------+------------+-----------------+
+; iniciar           ; clk        ; 5.225 ; 5.225 ; Rise       ; clk             ;
+; moeda_entrada[*]  ; clk        ; 4.960 ; 4.960 ; Rise       ; clk             ;
+;  moeda_entrada[0] ; clk        ; 4.740 ; 4.740 ; Rise       ; clk             ;
+;  moeda_entrada[1] ; clk        ; 4.810 ; 4.810 ; Rise       ; clk             ;
+;  moeda_entrada[2] ; clk        ; 4.789 ; 4.789 ; Rise       ; clk             ;
+;  moeda_entrada[3] ; clk        ; 4.960 ; 4.960 ; Rise       ; clk             ;
++-------------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Hold Times                                                                      ;
++-------------------+------------+--------+--------+------------+-----------------+
+; Data Port         ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------------+------------+--------+--------+------------+-----------------+
+; iniciar           ; clk        ; -3.924 ; -3.924 ; Rise       ; clk             ;
+; moeda_entrada[*]  ; clk        ; -3.562 ; -3.562 ; Rise       ; clk             ;
+;  moeda_entrada[0] ; clk        ; -3.562 ; -3.562 ; Rise       ; clk             ;
+;  moeda_entrada[1] ; clk        ; -3.868 ; -3.868 ; Rise       ; clk             ;
+;  moeda_entrada[2] ; clk        ; -3.610 ; -3.610 ; Rise       ; clk             ;
+;  moeda_entrada[3] ; clk        ; -3.784 ; -3.784 ; Rise       ; clk             ;
++-------------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Clock to Output Times                                                          ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; saida_led[*]       ; clk        ; 8.924 ; 8.924 ; Rise       ; clk             ;
+;  saida_led[0]      ; clk        ; 8.924 ; 8.924 ; Rise       ; clk             ;
+;  saida_led[1]      ; clk        ; 8.075 ; 8.075 ; Rise       ; clk             ;
+;  saida_led[2]      ; clk        ; 8.356 ; 8.356 ; Rise       ; clk             ;
+; sinal_motor        ; clk        ; 8.979 ; 8.979 ; Rise       ; clk             ;
+; sinal_valvula_agua ; clk        ; 7.895 ; 7.895 ; Rise       ; clk             ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                  ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; saida_led[*]       ; clk        ; 7.361 ; 7.361 ; Rise       ; clk             ;
+;  saida_led[0]      ; clk        ; 8.006 ; 8.006 ; Rise       ; clk             ;
+;  saida_led[1]      ; clk        ; 7.361 ; 7.361 ; Rise       ; clk             ;
+;  saida_led[2]      ; clk        ; 7.639 ; 7.639 ; Rise       ; clk             ;
+; sinal_motor        ; clk        ; 8.060 ; 8.060 ; Rise       ; clk             ;
+; sinal_valvula_agua ; clk        ; 7.648 ; 7.648 ; Rise       ; clk             ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.112 ; -26.055       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -41.380               ;
++-------+--------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                    ;
++--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                    ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.112 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.143      ;
+; -1.081 ; Temporizador:U2|contador[1]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.112      ;
+; -1.047 ; Temporizador:U2|contador[2]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.078      ;
+; -1.025 ; Temporizador:U2|contador[3]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.056      ;
+; -0.978 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[21] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.009      ;
+; -0.978 ; Temporizador:U2|contador[4]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.009      ;
+; -0.956 ; Temporizador:U2|contador[5]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.987      ;
+; -0.947 ; Temporizador:U2|contador[1]  ; Temporizador:U2|contador[21] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.978      ;
+; -0.941 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[19] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.972      ;
+; -0.923 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.954      ;
+; -0.922 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[22] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.953      ;
+; -0.913 ; Temporizador:U2|contador[2]  ; Temporizador:U2|contador[21] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.944      ;
+; -0.910 ; Temporizador:U2|contador[1]  ; Temporizador:U2|contador[19] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.941      ;
+; -0.891 ; Temporizador:U2|contador[3]  ; Temporizador:U2|contador[21] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.922      ;
+; -0.891 ; Temporizador:U2|contador[1]  ; Temporizador:U2|contador[22] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.922      ;
+; -0.876 ; Temporizador:U2|contador[2]  ; Temporizador:U2|contador[19] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.907      ;
+; -0.873 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[18] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.904      ;
+; -0.871 ; Temporizador:U2|contador[7]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.902      ;
+; -0.857 ; Temporizador:U2|contador[2]  ; Temporizador:U2|contador[22] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.888      ;
+; -0.854 ; Temporizador:U2|contador[3]  ; Temporizador:U2|contador[19] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.885      ;
+; -0.853 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.885      ;
+; -0.853 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.885      ;
+; -0.853 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.885      ;
+; -0.853 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.885      ;
+; -0.853 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.885      ;
+; -0.853 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.885      ;
+; -0.853 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.885      ;
+; -0.853 ; Temporizador:U2|contador[26] ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.885      ;
+; -0.851 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[20] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.882      ;
+; -0.849 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.881      ;
+; -0.849 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.881      ;
+; -0.849 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.881      ;
+; -0.849 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.881      ;
+; -0.849 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.881      ;
+; -0.849 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.881      ;
+; -0.849 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.881      ;
+; -0.849 ; Temporizador:U2|contador[27] ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.881      ;
+; -0.844 ; Temporizador:U2|contador[4]  ; Temporizador:U2|contador[21] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.875      ;
+; -0.842 ; Temporizador:U2|contador[1]  ; Temporizador:U2|contador[18] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.873      ;
+; -0.837 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[17] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.868      ;
+; -0.835 ; Temporizador:U2|contador[3]  ; Temporizador:U2|contador[22] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.866      ;
+; -0.834 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.863      ;
+; -0.833 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.865      ;
+; -0.833 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.865      ;
+; -0.833 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.865      ;
+; -0.833 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.865      ;
+; -0.833 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.865      ;
+; -0.833 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.865      ;
+; -0.833 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.865      ;
+; -0.833 ; Temporizador:U2|contador[24] ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.865      ;
+; -0.830 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.859      ;
+; -0.830 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.859      ;
+; -0.830 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.859      ;
+; -0.830 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.859      ;
+; -0.830 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.859      ;
+; -0.830 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.859      ;
+; -0.830 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.859      ;
+; -0.830 ; Temporizador:U2|contador[6]  ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.859      ;
+; -0.822 ; Temporizador:U2|contador[5]  ; Temporizador:U2|contador[21] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.853      ;
+; -0.820 ; Temporizador:U2|contador[1]  ; Temporizador:U2|contador[20] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.851      ;
+; -0.817 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.846      ;
+; -0.817 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.846      ;
+; -0.817 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.846      ;
+; -0.817 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.846      ;
+; -0.817 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.846      ;
+; -0.817 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.846      ;
+; -0.817 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.846      ;
+; -0.817 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.846      ;
+; -0.816 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.848      ;
+; -0.816 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.848      ;
+; -0.816 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.848      ;
+; -0.816 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.848      ;
+; -0.816 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.848      ;
+; -0.816 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.848      ;
+; -0.816 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.848      ;
+; -0.816 ; Temporizador:U2|contador[25] ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.848      ;
+; -0.810 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.839      ;
+; -0.810 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.839      ;
+; -0.810 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.839      ;
+; -0.810 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.839      ;
+; -0.810 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.839      ;
+; -0.810 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.839      ;
+; -0.810 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.839      ;
+; -0.810 ; Temporizador:U2|contador[9]  ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.839      ;
+; -0.808 ; Temporizador:U2|contador[2]  ; Temporizador:U2|contador[18] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.839      ;
+; -0.807 ; Temporizador:U2|contador[4]  ; Temporizador:U2|contador[19] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.838      ;
+; -0.806 ; Temporizador:U2|contador[1]  ; Temporizador:U2|contador[17] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.837      ;
+; -0.803 ; Temporizador:U2|contador[1]  ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.832      ;
+; -0.799 ; Temporizador:U2|contador[0]  ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.828      ;
+; -0.797 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; -0.002     ; 1.827      ;
+; -0.797 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; -0.002     ; 1.827      ;
+; -0.797 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[26] ; clk          ; clk         ; 1.000        ; -0.002     ; 1.827      ;
+; -0.797 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[27] ; clk          ; clk         ; 1.000        ; -0.002     ; 1.827      ;
+; -0.797 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[28] ; clk          ; clk         ; 1.000        ; -0.002     ; 1.827      ;
+; -0.797 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[29] ; clk          ; clk         ; 1.000        ; -0.002     ; 1.827      ;
+; -0.797 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[30] ; clk          ; clk         ; 1.000        ; -0.002     ; 1.827      ;
+; -0.797 ; Temporizador:U2|contador[20] ; Temporizador:U2|contador[31] ; clk          ; clk         ; 1.000        ; -0.002     ; 1.827      ;
+; -0.793 ; Temporizador:U2|contador[8]  ; Temporizador:U2|contador[23] ; clk          ; clk         ; 1.000        ; -0.001     ; 1.824      ;
+; -0.791 ; Temporizador:U2|contador[10] ; Temporizador:U2|contador[24] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.820      ;
+; -0.791 ; Temporizador:U2|contador[10] ; Temporizador:U2|contador[25] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.820      ;
++--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                            ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; estado_atual[1]                          ; estado_atual[1]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.243 ; Temporizador:U2|contador[31]             ; Temporizador:U2|contador[31]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.353 ; Temporizador:U2|contador[0]              ; Temporizador:U2|contador[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.505      ;
+; 0.357 ; Temporizador:U2|contador[1]              ; Temporizador:U2|contador[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358 ; ContadorDinheiro:U1|contador_dinheiro[2] ; ContadorDinheiro:U1|contador_dinheiro[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Temporizador:U2|contador[2]              ; Temporizador:U2|contador[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Temporizador:U2|contador[25]             ; Temporizador:U2|contador[25]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Temporizador:U2|contador[27]             ; Temporizador:U2|contador[27]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; Temporizador:U2|contador[4]              ; Temporizador:U2|contador[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; Temporizador:U2|contador[9]              ; Temporizador:U2|contador[9]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; Temporizador:U2|contador[11]             ; Temporizador:U2|contador[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; Temporizador:U2|contador[7]              ; Temporizador:U2|contador[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; Temporizador:U2|contador[13]             ; Temporizador:U2|contador[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; Temporizador:U2|contador[14]             ; Temporizador:U2|contador[14]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; Temporizador:U2|contador[15]             ; Temporizador:U2|contador[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; Temporizador:U2|contador[29]             ; Temporizador:U2|contador[29]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; Temporizador:U2|contador[30]             ; Temporizador:U2|contador[30]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.369 ; Temporizador:U2|contador[3]              ; Temporizador:U2|contador[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370 ; ContadorDinheiro:U1|contador_dinheiro[3] ; ContadorDinheiro:U1|contador_dinheiro[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; Temporizador:U2|contador[5]              ; Temporizador:U2|contador[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.371 ; Temporizador:U2|contador[8]              ; Temporizador:U2|contador[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; Temporizador:U2|contador[10]             ; Temporizador:U2|contador[10]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; Temporizador:U2|contador[24]             ; Temporizador:U2|contador[24]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; Temporizador:U2|contador[26]             ; Temporizador:U2|contador[26]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; Temporizador:U2|contador[6]              ; Temporizador:U2|contador[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; Temporizador:U2|contador[12]             ; Temporizador:U2|contador[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; Temporizador:U2|contador[28]             ; Temporizador:U2|contador[28]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.376 ; ContadorDinheiro:U1|contador_dinheiro[0] ; ContadorDinheiro:U1|contador_dinheiro[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; ContadorDinheiro:U1|contador_dinheiro[1] ; ContadorDinheiro:U1|contador_dinheiro[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.481 ; estado_atual[0]                          ; estado_atual[1]                          ; clk          ; clk         ; 0.000        ; -0.002     ; 0.631      ;
+; 0.491 ; Temporizador:U2|contador[0]              ; Temporizador:U2|contador[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.643      ;
+; 0.495 ; Temporizador:U2|contador[1]              ; Temporizador:U2|contador[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.647      ;
+; 0.496 ; Temporizador:U2|contador[2]              ; Temporizador:U2|contador[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; Temporizador:U2|contador[25]             ; Temporizador:U2|contador[26]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; Temporizador:U2|contador[27]             ; Temporizador:U2|contador[28]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.497 ; Temporizador:U2|contador[4]              ; Temporizador:U2|contador[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.649      ;
+; 0.498 ; Temporizador:U2|contador[9]              ; Temporizador:U2|contador[10]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; Temporizador:U2|contador[11]             ; Temporizador:U2|contador[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.499 ; Temporizador:U2|contador[30]             ; Temporizador:U2|contador[31]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; Temporizador:U2|contador[13]             ; Temporizador:U2|contador[14]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; Temporizador:U2|contador[14]             ; Temporizador:U2|contador[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; Temporizador:U2|contador[29]             ; Temporizador:U2|contador[30]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.509 ; Temporizador:U2|contador[3]              ; Temporizador:U2|contador[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
+; 0.510 ; Temporizador:U2|contador[5]              ; Temporizador:U2|contador[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.662      ;
+; 0.511 ; Temporizador:U2|contador[24]             ; Temporizador:U2|contador[25]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511 ; Temporizador:U2|contador[26]             ; Temporizador:U2|contador[27]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511 ; Temporizador:U2|contador[8]              ; Temporizador:U2|contador[9]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511 ; Temporizador:U2|contador[10]             ; Temporizador:U2|contador[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.663      ;
+; 0.512 ; Temporizador:U2|contador[6]              ; Temporizador:U2|contador[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.664      ;
+; 0.512 ; Temporizador:U2|contador[12]             ; Temporizador:U2|contador[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.664      ;
+; 0.512 ; Temporizador:U2|contador[28]             ; Temporizador:U2|contador[29]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.664      ;
+; 0.516 ; ContadorDinheiro:U1|contador_dinheiro[1] ; ContadorDinheiro:U1|contador_dinheiro[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
+; 0.516 ; ContadorDinheiro:U1|contador_dinheiro[0] ; ContadorDinheiro:U1|contador_dinheiro[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
+; 0.526 ; Temporizador:U2|contador[0]              ; Temporizador:U2|contador[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.678      ;
+; 0.530 ; Temporizador:U2|contador[1]              ; Temporizador:U2|contador[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.682      ;
+; 0.531 ; ContadorDinheiro:U1|contador_dinheiro[0] ; estado_atual[0]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; Temporizador:U2|contador[2]              ; Temporizador:U2|contador[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; Temporizador:U2|contador[25]             ; Temporizador:U2|contador[27]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; Temporizador:U2|contador[27]             ; Temporizador:U2|contador[29]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.532 ; Temporizador:U2|contador[4]              ; Temporizador:U2|contador[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.684      ;
+; 0.533 ; Temporizador:U2|contador[9]              ; Temporizador:U2|contador[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.685      ;
+; 0.533 ; Temporizador:U2|contador[11]             ; Temporizador:U2|contador[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.685      ;
+; 0.534 ; estado_atual[1]                          ; estado_atual[2]                          ; clk          ; clk         ; 0.000        ; 0.002      ; 0.688      ;
+; 0.534 ; Temporizador:U2|contador[29]             ; Temporizador:U2|contador[31]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.686      ;
+; 0.534 ; Temporizador:U2|contador[13]             ; Temporizador:U2|contador[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.686      ;
+; 0.544 ; Temporizador:U2|contador[3]              ; Temporizador:U2|contador[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
+; 0.545 ; Temporizador:U2|contador[5]              ; Temporizador:U2|contador[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.697      ;
+; 0.546 ; Temporizador:U2|contador[24]             ; Temporizador:U2|contador[26]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.698      ;
+; 0.546 ; Temporizador:U2|contador[26]             ; Temporizador:U2|contador[28]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.698      ;
+; 0.546 ; Temporizador:U2|contador[8]              ; Temporizador:U2|contador[10]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.698      ;
+; 0.546 ; Temporizador:U2|contador[10]             ; Temporizador:U2|contador[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.698      ;
+; 0.547 ; Temporizador:U2|contador[12]             ; Temporizador:U2|contador[14]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.699      ;
+; 0.547 ; Temporizador:U2|contador[28]             ; Temporizador:U2|contador[30]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.699      ;
+; 0.551 ; ContadorDinheiro:U1|contador_dinheiro[2] ; ContadorDinheiro:U1|contador_dinheiro[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.703      ;
+; 0.551 ; ContadorDinheiro:U1|contador_dinheiro[0] ; ContadorDinheiro:U1|contador_dinheiro[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.703      ;
+; 0.554 ; Temporizador:U2|contador[7]              ; Temporizador:U2|contador[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.706      ;
+; 0.559 ; estado_atual[0]                          ; estado_atual[2]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.711      ;
+; 0.561 ; Temporizador:U2|contador[0]              ; Temporizador:U2|contador[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.713      ;
+; 0.565 ; estado_atual[0]                          ; estado_atual[0]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.717      ;
+; 0.565 ; Temporizador:U2|contador[1]              ; Temporizador:U2|contador[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.717      ;
+; 0.566 ; Temporizador:U2|contador[2]              ; Temporizador:U2|contador[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566 ; Temporizador:U2|contador[25]             ; Temporizador:U2|contador[28]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566 ; Temporizador:U2|contador[27]             ; Temporizador:U2|contador[30]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.718      ;
+; 0.567 ; Temporizador:U2|contador[4]              ; Temporizador:U2|contador[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.719      ;
+; 0.568 ; Temporizador:U2|temporizador_concluido   ; estado_atual[2]                          ; clk          ; clk         ; 0.000        ; 0.002      ; 0.722      ;
+; 0.568 ; Temporizador:U2|contador[9]              ; Temporizador:U2|contador[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.720      ;
+; 0.568 ; Temporizador:U2|contador[11]             ; Temporizador:U2|contador[14]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.720      ;
+; 0.579 ; Temporizador:U2|contador[3]              ; Temporizador:U2|contador[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.581 ; Temporizador:U2|contador[24]             ; Temporizador:U2|contador[27]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.733      ;
+; 0.581 ; Temporizador:U2|contador[26]             ; Temporizador:U2|contador[29]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.733      ;
+; 0.581 ; Temporizador:U2|contador[8]              ; Temporizador:U2|contador[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.733      ;
+; 0.581 ; Temporizador:U2|contador[10]             ; Temporizador:U2|contador[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.733      ;
+; 0.582 ; Temporizador:U2|contador[28]             ; Temporizador:U2|contador[31]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.734      ;
+; 0.582 ; Temporizador:U2|contador[12]             ; Temporizador:U2|contador[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.734      ;
+; 0.589 ; Temporizador:U2|contador[7]              ; Temporizador:U2|contador[9]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.741      ;
+; 0.596 ; Temporizador:U2|contador[0]              ; Temporizador:U2|contador[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.748      ;
+; 0.600 ; Temporizador:U2|contador[1]              ; Temporizador:U2|contador[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.752      ;
+; 0.601 ; Temporizador:U2|contador[2]              ; Temporizador:U2|contador[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.753      ;
+; 0.601 ; Temporizador:U2|contador[25]             ; Temporizador:U2|contador[29]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.753      ;
+; 0.601 ; Temporizador:U2|contador[27]             ; Temporizador:U2|contador[31]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.753      ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                   ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ContadorDinheiro:U1|contador_dinheiro[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[10]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[10]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[11]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[11]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[12]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[12]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[13]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[13]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[14]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[14]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[15]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[15]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[16]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[16]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[17]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[17]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[18]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[18]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[19]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[19]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[20]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[20]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[21]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[21]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[22]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[22]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[23]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[23]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[24]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[24]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[25]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[25]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[26]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[26]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[27]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[27]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[28]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[28]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[29]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[29]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[30]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[30]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[31]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[31]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[5]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[5]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[6]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[6]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[7]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[7]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[8]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[8]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|contador[9]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|contador[9]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Temporizador:U2|temporizador_concluido   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Temporizador:U2|temporizador_concluido   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; estado_atual[0]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; estado_atual[0]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; estado_atual[1]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; estado_atual[1]                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; estado_atual[2]                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; estado_atual[2]                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U1|contador_dinheiro[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U1|contador_dinheiro[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U1|contador_dinheiro[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U1|contador_dinheiro[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U1|contador_dinheiro[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U1|contador_dinheiro[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U1|contador_dinheiro[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U1|contador_dinheiro[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U2|contador[0]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U2|contador[0]|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U2|contador[10]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U2|contador[10]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U2|contador[11]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U2|contador[11]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U2|contador[12]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U2|contador[12]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U2|contador[13]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; U2|contador[13]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; U2|contador[14]|clk                      ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Setup Times                                                                   ;
++-------------------+------------+-------+-------+------------+-----------------+
+; Data Port         ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------------+------------+-------+-------+------------+-----------------+
+; iniciar           ; clk        ; 2.226 ; 2.226 ; Rise       ; clk             ;
+; moeda_entrada[*]  ; clk        ; 2.217 ; 2.217 ; Rise       ; clk             ;
+;  moeda_entrada[0] ; clk        ; 2.124 ; 2.124 ; Rise       ; clk             ;
+;  moeda_entrada[1] ; clk        ; 2.179 ; 2.179 ; Rise       ; clk             ;
+;  moeda_entrada[2] ; clk        ; 2.133 ; 2.133 ; Rise       ; clk             ;
+;  moeda_entrada[3] ; clk        ; 2.217 ; 2.217 ; Rise       ; clk             ;
++-------------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Hold Times                                                                      ;
++-------------------+------------+--------+--------+------------+-----------------+
+; Data Port         ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------------+------------+--------+--------+------------+-----------------+
+; iniciar           ; clk        ; -1.735 ; -1.735 ; Rise       ; clk             ;
+; moeda_entrada[*]  ; clk        ; -1.571 ; -1.571 ; Rise       ; clk             ;
+;  moeda_entrada[0] ; clk        ; -1.571 ; -1.571 ; Rise       ; clk             ;
+;  moeda_entrada[1] ; clk        ; -1.691 ; -1.691 ; Rise       ; clk             ;
+;  moeda_entrada[2] ; clk        ; -1.577 ; -1.577 ; Rise       ; clk             ;
+;  moeda_entrada[3] ; clk        ; -1.664 ; -1.664 ; Rise       ; clk             ;
++-------------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Clock to Output Times                                                          ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; saida_led[*]       ; clk        ; 4.497 ; 4.497 ; Rise       ; clk             ;
+;  saida_led[0]      ; clk        ; 4.497 ; 4.497 ; Rise       ; clk             ;
+;  saida_led[1]      ; clk        ; 4.179 ; 4.179 ; Rise       ; clk             ;
+;  saida_led[2]      ; clk        ; 4.284 ; 4.284 ; Rise       ; clk             ;
+; sinal_motor        ; clk        ; 4.531 ; 4.531 ; Rise       ; clk             ;
+; sinal_valvula_agua ; clk        ; 4.138 ; 4.138 ; Rise       ; clk             ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                  ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; saida_led[*]       ; clk        ; 3.910 ; 3.910 ; Rise       ; clk             ;
+;  saida_led[0]      ; clk        ; 4.154 ; 4.154 ; Rise       ; clk             ;
+;  saida_led[1]      ; clk        ; 3.910 ; 3.910 ; Rise       ; clk             ;
+;  saida_led[2]      ; clk        ; 4.017 ; 4.017 ; Rise       ; clk             ;
+; sinal_motor        ; clk        ; 4.188 ; 4.188 ; Rise       ; clk             ;
+; sinal_valvula_agua ; clk        ; 4.025 ; 4.025 ; Rise       ; clk             ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -4.138   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  clk             ; -4.138   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -124.306 ; 0.0   ; 0.0      ; 0.0     ; -50.511             ;
+;  clk             ; -124.306 ; 0.000 ; N/A      ; N/A     ; -50.511             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------------+
+; Setup Times                                                                   ;
++-------------------+------------+-------+-------+------------+-----------------+
+; Data Port         ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------------+------------+-------+-------+------------+-----------------+
+; iniciar           ; clk        ; 5.225 ; 5.225 ; Rise       ; clk             ;
+; moeda_entrada[*]  ; clk        ; 4.960 ; 4.960 ; Rise       ; clk             ;
+;  moeda_entrada[0] ; clk        ; 4.740 ; 4.740 ; Rise       ; clk             ;
+;  moeda_entrada[1] ; clk        ; 4.810 ; 4.810 ; Rise       ; clk             ;
+;  moeda_entrada[2] ; clk        ; 4.789 ; 4.789 ; Rise       ; clk             ;
+;  moeda_entrada[3] ; clk        ; 4.960 ; 4.960 ; Rise       ; clk             ;
++-------------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Hold Times                                                                      ;
++-------------------+------------+--------+--------+------------+-----------------+
+; Data Port         ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------------+------------+--------+--------+------------+-----------------+
+; iniciar           ; clk        ; -1.735 ; -1.735 ; Rise       ; clk             ;
+; moeda_entrada[*]  ; clk        ; -1.571 ; -1.571 ; Rise       ; clk             ;
+;  moeda_entrada[0] ; clk        ; -1.571 ; -1.571 ; Rise       ; clk             ;
+;  moeda_entrada[1] ; clk        ; -1.691 ; -1.691 ; Rise       ; clk             ;
+;  moeda_entrada[2] ; clk        ; -1.577 ; -1.577 ; Rise       ; clk             ;
+;  moeda_entrada[3] ; clk        ; -1.664 ; -1.664 ; Rise       ; clk             ;
++-------------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Clock to Output Times                                                          ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; saida_led[*]       ; clk        ; 8.924 ; 8.924 ; Rise       ; clk             ;
+;  saida_led[0]      ; clk        ; 8.924 ; 8.924 ; Rise       ; clk             ;
+;  saida_led[1]      ; clk        ; 8.075 ; 8.075 ; Rise       ; clk             ;
+;  saida_led[2]      ; clk        ; 8.356 ; 8.356 ; Rise       ; clk             ;
+; sinal_motor        ; clk        ; 8.979 ; 8.979 ; Rise       ; clk             ;
+; sinal_valvula_agua ; clk        ; 7.895 ; 7.895 ; Rise       ; clk             ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                  ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; saida_led[*]       ; clk        ; 3.910 ; 3.910 ; Rise       ; clk             ;
+;  saida_led[0]      ; clk        ; 4.154 ; 4.154 ; Rise       ; clk             ;
+;  saida_led[1]      ; clk        ; 3.910 ; 3.910 ; Rise       ; clk             ;
+;  saida_led[2]      ; clk        ; 4.017 ; 4.017 ; Rise       ; clk             ;
+; sinal_motor        ; clk        ; 4.188 ; 4.188 ; Rise       ; clk             ;
+; sinal_valvula_agua ; clk        ; 4.025 ; 4.025 ; Rise       ; clk             ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 1614     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 1614     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 58    ; 58   ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 14    ; 14   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Jul 26 14:13:34 2024
+Info: Command: quartus_sta ControleMaquinaDeLavar -c ControleMaquinaDeLavar
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'ControleMaquinaDeLavar.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.138
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.138      -124.306 clk 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -50.511 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.112
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.112       -26.055 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -41.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4540 megabytes
+    Info: Processing ended: Fri Jul 26 14:13:35 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

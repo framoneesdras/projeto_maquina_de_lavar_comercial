@@ -1,0 +1,170 @@
+|ControleMaquinaDeLavar
+clk => ContadorDinheiro:U1.clk
+clk => estado_atual[0].CLK
+clk => estado_atual[1].CLK
+clk => estado_atual[2].CLK
+clk => Temporizador:U2.clk
+reset => ContadorDinheiro:U1.reset
+reset => estado_atual[0].ACLR
+reset => estado_atual[1].ACLR
+reset => estado_atual[2].ACLR
+reset => Temporizador:U2.reset
+iniciar => process_1.IN1
+iniciar => Mux0.IN6
+iniciar => Mux2.IN5
+moeda_entrada[0] => ContadorDinheiro:U1.moeda_entrada[0]
+moeda_entrada[1] => ContadorDinheiro:U1.moeda_entrada[1]
+moeda_entrada[2] => ContadorDinheiro:U1.moeda_entrada[2]
+moeda_entrada[3] => ContadorDinheiro:U1.moeda_entrada[3]
+saida_led[0] <= LEDsDisplay:U5.saida_led[0]
+saida_led[1] <= LEDsDisplay:U5.saida_led[1]
+saida_led[2] <= LEDsDisplay:U5.saida_led[2]
+sinal_motor <= ControleMotor:U3.sinal_motor
+sinal_valvula_agua <= ControleValvulaAgua:U4.sinal_valvula_agua
+
+
+|ControleMaquinaDeLavar|ContadorDinheiro:U1
+clk => contador_dinheiro[0].CLK
+clk => contador_dinheiro[1].CLK
+clk => contador_dinheiro[2].CLK
+clk => contador_dinheiro[3].CLK
+reset => contador_dinheiro[0].ACLR
+reset => contador_dinheiro[1].ACLR
+reset => contador_dinheiro[2].ACLR
+reset => contador_dinheiro[3].ACLR
+moeda_entrada[0] => Add0.IN4
+moeda_entrada[0] => Equal0.IN3
+moeda_entrada[1] => Add0.IN3
+moeda_entrada[1] => Equal0.IN2
+moeda_entrada[2] => Add0.IN2
+moeda_entrada[2] => Equal0.IN1
+moeda_entrada[3] => Add0.IN1
+moeda_entrada[3] => Equal0.IN0
+dinheiro_total[0] <= contador_dinheiro[0].DB_MAX_OUTPUT_PORT_TYPE
+dinheiro_total[1] <= contador_dinheiro[1].DB_MAX_OUTPUT_PORT_TYPE
+dinheiro_total[2] <= contador_dinheiro[2].DB_MAX_OUTPUT_PORT_TYPE
+dinheiro_total[3] <= contador_dinheiro[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ControleMaquinaDeLavar|Temporizador:U2
+clk => temporizador_concluido~reg0.CLK
+clk => contador[0].CLK
+clk => contador[1].CLK
+clk => contador[2].CLK
+clk => contador[3].CLK
+clk => contador[4].CLK
+clk => contador[5].CLK
+clk => contador[6].CLK
+clk => contador[7].CLK
+clk => contador[8].CLK
+clk => contador[9].CLK
+clk => contador[10].CLK
+clk => contador[11].CLK
+clk => contador[12].CLK
+clk => contador[13].CLK
+clk => contador[14].CLK
+clk => contador[15].CLK
+clk => contador[16].CLK
+clk => contador[17].CLK
+clk => contador[18].CLK
+clk => contador[19].CLK
+clk => contador[20].CLK
+clk => contador[21].CLK
+clk => contador[22].CLK
+clk => contador[23].CLK
+clk => contador[24].CLK
+clk => contador[25].CLK
+clk => contador[26].CLK
+clk => contador[27].CLK
+clk => contador[28].CLK
+clk => contador[29].CLK
+clk => contador[30].CLK
+clk => contador[31].CLK
+reset => temporizador_concluido~reg0.ACLR
+reset => contador[0].ACLR
+reset => contador[1].ACLR
+reset => contador[2].ACLR
+reset => contador[3].ACLR
+reset => contador[4].ACLR
+reset => contador[5].ACLR
+reset => contador[6].ACLR
+reset => contador[7].ACLR
+reset => contador[8].ACLR
+reset => contador[9].ACLR
+reset => contador[10].ACLR
+reset => contador[11].ACLR
+reset => contador[12].ACLR
+reset => contador[13].ACLR
+reset => contador[14].ACLR
+reset => contador[15].ACLR
+reset => contador[16].ACLR
+reset => contador[17].ACLR
+reset => contador[18].ACLR
+reset => contador[19].ACLR
+reset => contador[20].ACLR
+reset => contador[21].ACLR
+reset => contador[22].ACLR
+reset => contador[23].ACLR
+reset => contador[24].ACLR
+reset => contador[25].ACLR
+reset => contador[26].ACLR
+reset => contador[27].ACLR
+reset => contador[28].ACLR
+reset => contador[29].ACLR
+reset => contador[30].ACLR
+reset => contador[31].ACLR
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => contador.OUTPUTSELECT
+iniciar_temporizador => temporizador_concluido.OUTPUTSELECT
+temporizador_concluido <= temporizador_concluido~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ControleMaquinaDeLavar|ControleMotor:U3
+ctrl_motor => sinal_motor.DATAIN
+sinal_motor <= ctrl_motor.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ControleMaquinaDeLavar|ControleValvulaAgua:U4
+ctrl_valvula_agua => sinal_valvula_agua.DATAIN
+sinal_valvula_agua <= ctrl_valvula_agua.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ControleMaquinaDeLavar|LEDsDisplay:U5
+status_led[0] => saida_led[0].DATAIN
+status_led[1] => saida_led[1].DATAIN
+status_led[2] => saida_led[2].DATAIN
+saida_led[0] <= status_led[0].DB_MAX_OUTPUT_PORT_TYPE
+saida_led[1] <= status_led[1].DB_MAX_OUTPUT_PORT_TYPE
+saida_led[2] <= status_led[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
